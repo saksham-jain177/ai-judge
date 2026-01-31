@@ -1,0 +1,15 @@
+### CURRENT GAME STATE
+- Round Number: {{round_number}}
+- User Bomb Used: {{user_bomb_used}}
+- Bot Bomb Used: {{bot_bomb_used}}
+
+### USER INPUT
+"{{user_input}}"
+
+### TARGET
+Evaluate the user input based on the system rules and current state. 
+- Determine the bot's move for this round.
+- Determine if the user's move is VALID, INVALID, or UNCLEAR.
+- Update the bomb usage state properly.
+- Return the JSON response.
+- Note: Invalid or unclear moves waste the turn and the round ends.
