@@ -38,7 +38,16 @@ def main():
         
         data = json.loads(raw)
 
-        print(f"\nIntent: {data['intent']}\nValidity: {data['validity']}\nWinner: {data['winner']}\nNext: {data['next_action']}\n")
+        print(
+            f"\nUser Move: {data['user_move']}"
+            f"\nBot Move: {data['bot_move']}"
+            f"\nValidity: {data['validity']}"
+            f"\nWinner: {data['winner']}"
+            f"\nNext: {data['next_action']}\n"
+        )
+
+        if "GAME_OVER" in data["next_action"] or "FINAL_RESULT" in data["next_action"]:
+            break
 
         # Bomb state is updated strictly from model output.
         state["round"] += 1
