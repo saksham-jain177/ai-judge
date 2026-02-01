@@ -46,7 +46,7 @@ def main():
             f"\nNext: {data['next_action']}\n"
         )
 
-        if "GAME_OVER" in data["next_action"] or "FINAL_RESULT" in data["next_action"]:
+        if data["next_action"].startswith(("GAME_OVER", "FINAL_RESULT")):
             break
 
         # Bomb state is updated strictly from model output.
